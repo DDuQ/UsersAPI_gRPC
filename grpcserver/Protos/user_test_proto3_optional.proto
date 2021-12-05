@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+import "google/api/annotations.proto";
+option csharp_namespace = "grpcserver";
+
+package user;
+
+// The greeting service definition.
+service User {
+  rpc GetUsers (Empty) returns (UsersList) {
+    option (google.api.http) = {
+      get: "/api/users/"
+    };
+  }
+  rpc GetUser (UserDocument) returns (UserModel) {
+    option (google.api.http) = {
+      get: "/api/users/{document}" 
+    };
+  }
+
+  rpc PostUser (UserModel) returns (Response){
+    option (google.api.http) = {
+      post: "/api/users/"
+      body: "*"
+    };
+  }
+
+  rpc EditUser (UserModel) returns (Response){
+    option (google.api.http) = {
+      put: "/api/users/{documentId}"
+      body: "*"
+    };
+  }
+
+  rpc DeleteUser (UserDocument) returns (Response){
+    option (google.api.http) = {
+      delete: "/api/users/{document}"
+    };
+  }
+}
+
+message UserModel{
+    string documentId = 1;
+    string name = 2;
+    string age = 3;
+}
+
+message UserDocument{
+    string document = 1;
+}
+
+message UsersList{
+    repeated UserModel users = 1;
+}
+
+message Empty{
+}
+
+message Response {
+    bool IsSuccess = 1;
+    string Message = 2;
+    optional UserModel Results = 3;
+}

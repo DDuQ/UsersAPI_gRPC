@@ -1,0 +1,3 @@
+is_global = true
+build_property.RootNamespace = Users.gRPCServer
+build_property.ProjectDir = C:\Users\esteb\source\repos\asp.netgrpccert\grpcserver\

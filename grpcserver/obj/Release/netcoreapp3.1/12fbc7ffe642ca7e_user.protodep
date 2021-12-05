@@ -1,0 +1,5 @@
+obj\Release\netcoreapp3.1\Protos/User.cs \
+obj\Release\netcoreapp3.1\Protos/UserGrpc.cs: google/api/http.proto\
+ C:/Users/esteb/.nuget/packages/grpc.tools/2.32.0/build/native/include/google/protobuf/descriptor.proto\
+ google/api/annotations.proto\
+ Protos/user.proto
