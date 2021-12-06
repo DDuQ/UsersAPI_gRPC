@@ -1,7 +1,7 @@
 
 # UsersAPI_gRPC
 
-REST API example that uses gRPC with the HTTP 1.1 protocol 
+REST API example that uses gRPC(syntax proto3) with the HTTP 1.1 protocol, .NET Core 3.1 
 
 
 ## Table of contents
@@ -28,8 +28,8 @@ Here is a more detailed article about gRPC and REST APIs.
 
 | REST | gRPC  | 
 | :----------------------- | :------- | 
-| JSON format, easy reading comprehension for the programmer. |Message format (Proto buffers), programming language agnostic. |
-| HTTP/1.1 protocol    | HTTP/2.0 protocol  | 
+| JSON - XML (or alike) formats, easy reading comprehension for the programmer. |Message format (Proto buffers), programming language agnostic. |
+| HTTP/1.1 - HTTP/2.0 protocol     | HTTP/2.0 protocol  | 
 | Request-response communication model; communication slows down as the number of requests increases.| Client-response communication model; supports bidirectional communication and streaming which allows you to simultaneously receive multiple requests from different clients.|
 | It only has **unary** interactions (request-response). | In addition to unary interactions, there are different types of streaming: **Server-streaming**, **Customer-streaming**, **Bidirectional-streaming** |
 
@@ -39,16 +39,16 @@ Here is a more detailed article about gRPC and REST APIs.
 
 #### Get all users
 
-```http
+~~~
   GET /api/users
-```
+~~~
 Returns a list of the users found in the database.
 
 #### Get user
 
-```http
+~~~
   GET /api/users/${id}
-```
+~~~
 
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
@@ -56,9 +56,9 @@ Returns a list of the users found in the database.
 
 Returns either an user or a failed response if the user was not found.
 #### Post user
-```http
+~~~
   POST /api/users/${documentId}
-```
+~~~
 
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
@@ -67,9 +67,9 @@ Returns either an user or a failed response if the user was not found.
 Returns a response which notifies if the user was successfully added.
 
 #### Update user
-```http
+~~~
   PUT /api/users/${documentId}
-```
+~~~
 
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
@@ -80,9 +80,9 @@ Returns a response which notifies if the user was successfully added.
 Returns a response which notifies if the update was successful.
 
 #### Delete user
-```http
+~~~
   DELETE /api/users/${documentId}
-```
+~~~
 
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
