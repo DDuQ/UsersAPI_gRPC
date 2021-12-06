@@ -1,7 +1,7 @@
 
 # UsersAPI_gRPC
 
-REST API example that uses gRPC(syntax proto3) with the HTTP 1.1 protocol, .NET Core 3.1 
+REST API example that uses gRPC(syntax proto3) with the HTTP 1.1 protocol, C# 8.0 and .NET Core 3.1 
 
 
 ## Table of contents
