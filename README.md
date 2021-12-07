@@ -18,7 +18,7 @@ REST API example that uses gRPC(syntax proto3) with the HTTP 1.1 protocol, C# 8.
 
 The reason for gRPC is to make communication between microservices faster.
 
-**REST** aims to expose client services through the JSON format following the HTTP protocol. 
+**REST** aims to expose client services through the JSON, XML or alike formats following the HTTP protocol. 
 
 Here is a more detailed article about gRPC and REST APIs. 
 [Click here](https://www.imaginarycloud.com/blog/grpc-vs-rest/)
@@ -31,7 +31,7 @@ Here is a more detailed article about gRPC and REST APIs.
 | JSON - XML (or alike) formats, easy reading comprehension for the programmer. |Message format (Proto buffers), programming language agnostic. |
 | HTTP/1.1 - HTTP/2.0 protocol     | HTTP/2.0 protocol  | 
 | Request-response communication model; communication slows down as the number of requests increases.| Client-response communication model; supports bidirectional communication and streaming which allows you to simultaneously receive multiple requests from different clients.|
-| It only has **unary** interactions (request-response). | In addition to unary interactions, there are different types of streaming: **Server-streaming**, **Customer-streaming**, **Bidirectional-streaming** |
+| It only has **unary** interactions (request-response). | In addition to unary interactions, there are different types of streaming: **Server-streaming**, **Client-streaming**, **Bidirectional-streaming** |
 
 
 
